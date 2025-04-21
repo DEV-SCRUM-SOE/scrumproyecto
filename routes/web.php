@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
+Route::resource('/roles', RoleController::class)->names('roles');
 Route::resource('/definiciones', DefinicionController::class)->names('definiciones');
 Route::resource('/productbacklog', ProductBacklogController::class)->names('productbackloges');
 Route::resource('/historiausuario', HistoriausuarioController::class)->names('historiausuarios');
