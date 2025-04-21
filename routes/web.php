@@ -35,9 +35,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/users', UserController::class)->names('users');
-
-
-
+Route::resource('/roles', RoleController::class)->names('roles');
 Route::resource('/definiciones', DefinicionController::class)->names('definiciones');
 Route::resource('/productbacklog', ProductBacklogController::class)->names('productbackloges');
 Route::resource('/historiausuario', HistoriausuarioController::class)->names('historiausuarios');
