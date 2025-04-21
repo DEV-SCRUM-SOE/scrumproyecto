@@ -27,16 +27,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::resource('/users', UserController::class)->names('users');
 Route::resource('/roles', RoleController::class)->names('roles');
 Route::resource('/definiciones', DefinicionController::class)->names('definiciones');
+Route::resource('/roles', RoleController::class)->names('roles');
 Route::resource('/productbacklog', ProductBacklogController::class)->names('productbackloges');
 Route::resource('/historiausuario', HistoriausuarioController::class)->names('historiausuarios');
 Route::resource('/sprintbacklog', SprintbacklogController::class)->names('sprintbackloges');
