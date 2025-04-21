@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::resource('/users', UserController::class)->names('users');
 
 
 Route::resource('/definiciones', DefinicionController::class)->names('definiciones');
